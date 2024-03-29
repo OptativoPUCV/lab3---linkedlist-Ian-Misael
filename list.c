@@ -90,7 +90,15 @@ void pushBack(List * list, void * data) {
 
 void pushCurrent(List * list, void * data) {
   if (list->current == NULL) {
-    
+    pushFront(list,data);
+  }
+  else {
+    Node * nuevo = createNode(data);
+    nuevo->next = list->current->next;
+    nuevo->prev = list->current;
+    if (list->current->next == NULL) {
+      list->tail = nuevo; 
+    }
   }
 }
 
