@@ -6,30 +6,34 @@
 typedef struct Node Node;
 
 struct Node {
-    void * data;
-    Node * next;
-    Node * prev;
+  void * data;
+  Node * next;
+  Node * prev;
 };
 
 struct List {
-    Node * head;
-    Node * tail;
-    Node * current;
+  Node * head;
+  Node * tail;
+  Node * current;
 };
 
 typedef List List;
 
 Node * createNode(void * data) {
-    Node * new = (Node *)malloc(sizeof(Node));
-    assert(new != NULL);
-    new->data = data;
-    new->prev = NULL;
-    new->next = NULL;
-    return new;
+  Node * new = (Node *)malloc(sizeof(Node));
+  assert(new != NULL);
+  new->data = data;
+  new->prev = NULL;
+  new->next = NULL;
+  return new;
 }
 
-List * createList() {
-     return NULL;
+List * createList() { 
+  List *list = (List *)malloc(sizeof(List));
+  list->head = NULL;
+  list->tail = NULL;
+  list->current = NULL;
+  return list;
 }
 
 void * firstList(List * list) {
