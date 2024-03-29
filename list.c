@@ -40,7 +40,7 @@ void * firstList(List * list) {
   if (list->head == NULL || list->head == NULL) {
     return NULL;
   }
-  list->current = 0;
+  list->current = list->head;
   return list->head->data;
 }
 
